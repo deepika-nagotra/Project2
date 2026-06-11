@@ -23,7 +23,24 @@ header h3{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color:beige;
     padding-top: 15px;
-   
     text-align: center;
     padding-bottom: 5px;
+}
+.navbar{
+    display: flex;
+    text-transform: uppercase;
+    font-size: x-large;
+}
+.logo{
+   padding-left: 750px;
+}
+.cart-btn{
+    display:flex;
+    gap:0px;
+    border-radius: 50%;
+      padding-left: 500px;
+    cursor: pointer;
+}
+.menu-lines{
+    padding-left: 50px;
 }
