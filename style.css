@@ -2,6 +2,8 @@
     margin-top: 0px;
     padding: 0px;
     margin-left: 0px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
     margin-right: 0px;
 }
 header{
@@ -125,10 +127,13 @@ header h3{
 }
 .hero-image{
  position: relative;
+ display: block;
  margin-bottom: 0px;
 }
 .hero-image img{
     display: block;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 .hero-text{
     position: absolute;
@@ -147,9 +152,13 @@ footer{
 footer h3{
     color:rgb(207, 207, 207);
     text-align: right;
-    padding-top: 4px;
-    padding-bottom: 6px;
+    padding-top: 15px;
+    padding-bottom: 12px;
     padding-right: 10px;
+}
+.hero-container{
+    line-height:0px;
+    font-size:0px
 }
 .order-btn{
     width:200px;
@@ -157,7 +166,7 @@ footer h3{
     height: 40px;
     background-color:rgb(32, 28, 28) ;
     text-decoration: none;
-    padding-top: 13px;
+    padding-top: 12px;
     margin-left: 100px;
     padding-bottom: 13px;
     padding-left: 50px;

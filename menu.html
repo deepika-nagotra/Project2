@@ -3,9 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Brew Bliss Cafe - Menu</title>
+    <link rel="stylesheet" href="menu-style.css">
 </head>
 <body>
-    
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">BREW BLISS CAFE</div>
+        <nav>
+            <a href="Page1.html">Home</a>
+            <a href="menu.html" class="active">Menu</a>
+        </nav>
+        <!-- Shopping Cart Icon with Count -->
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Main Menu Container -->
+    <main class="menu-container">
+        <h1 class="menu-title">Our Delicious Menu</h1>
+        
+        <!-- Category: Coffee -->
+        <h2 class="category-title">☕ Hot & Cold Brews</h2>
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-card">
+                <div class="badge veg"></div>
+                <div class="item-info">
+                    <h3>Signature Cold Coffee</h3>
+                    <p class="desc">Rich espresso blended with creamy vanilla ice cream and fresh milk.</p>
+                    <p class="price">₹149</p>
+                    <button class="add-btn" onclick="addToCart('Signature Cold Coffee', 149)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-card">
+                <div class="badge veg"></div>
+                <div class="item-info">
+                    <h3>Creamy Cappuccino</h3>
+                    <p class="desc">Classic hot espresso shot topped with thick steamed milk foam.</p>
+                    <p class="price">₹119</p>
+                    <button class="add-btn" onclick="addToCart('Creamy Cappuccino', 119)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Bakery & Quick Bites -->
+        <h2 class="category-title">🥐 Handmade Treats & Bites</h2>
+        <div class="menu-grid">
+            <!-- Item 3 -->
+            <div class="menu-card">
+                <div class="badge veg"></div>
+                <div class="item-info">
+                    <h3>Butter Croissant</h3>
+                    <p class="desc">Freshly baked, flaky, and golden French butter pastry.</p>
+                    <p class="price">₹99</p>
+                    <button class="add-btn" onclick="addToCart('Butter Croissant', 99)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="menu-card">
+                <div class="badge non-veg"></div>
+                <div class="item-info">
+                    <h3>Peri Peri Chicken Burger</h3>
+                    <p class="desc">Crispy chicken patty with spicy peri-peri sauce and fresh veggies.</p>
+                    <p class="price">₹179</p>
+                    <button class="add-btn" onclick="addToCart('Peri Peri Chicken Burger', 179)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Side Cart Drawer (Aapki requirement ke mutabik) -->
+    <div id="side-cart" class="side-drawer">
+        <div class="drawer-header">
+            <h2>Your Shopping Cart</h2>
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+        </div>
+        
+        <!-- Is div ke andar items dynamic add honge JavaScript se -->
+        <div id="drawer-content" class="drawer-content">
+            <p id="empty-msg">Your cart is empty!</p>
+            <ul id="cart-items-list"></ul>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="total-section">
+                <span>Total Amount:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button class="checkout-btn">Checkout Now</button>
+        </div>
+    </div>
+
+    <!-- JavaScript logic functionality ke liye -->
+    <script>
+        let cart = [];
+
+        // Cart drawer ko kholne/band karne ke liye
+        function toggleCart() {
+            const cartDrawer = document.getElementById('side-cart');
+            cartDrawer.classList.toggle('open');
+        }
+
+        // Add to Cart function
+        function addToCart(name, price) {
+            // Check agar item pehle se cart mein hai toh quantity badhao
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name: name, price: price, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        // Cart delete function
+        function removeItem(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCartUI();
+        }
+
+        // Cart ko refresh aur naya data load karne ke liye UI function
+        function updateCartUI() {
+            const listElement = document.getElementById('cart-items-list');
+            const emptyMsg = document.getElementById('empty-msg');
+            const totalElement = document.getElementById('cart-total');
+            const countElement = document.getElementById('cart-count');
+            
+            listElement.innerHTML = '';
+            let total = 0;
+            let totalItemsCount = 0;
+
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                totalElement.innerText = '₹0';
+                countElement.innerText = '0';
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                totalItemsCount += item.quantity;
+
+                const li = document.createElement('li');
+                li.className = 'cart-item';
+                li.innerHTML = `
+                    <div>
+                        <strong>${item.name}</strong> <br>
+                        <small>₹${item.price} x ${item.quantity}</small>
+                    </div>
+                    <span class="delete-item-btn" onclick="removeItem('${item.name}')">🗑️</span>
+                `;
+                listElement.appendChild(li);
+            });
+
+            totalElement.innerText = '₹' + total;
+            countElement.innerText = totalItemsCount;
+        }
+    </script>
 </body>
 </html>
