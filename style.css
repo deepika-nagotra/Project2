@@ -125,6 +125,7 @@ header h3{
 }
 .hero-image{
  position: relative;
+ margin-bottom: 0px;
 }
 .hero-image img{
     display: block;
@@ -132,7 +133,7 @@ header h3{
 .hero-text{
     position: absolute;
     top:200px;
-    color:rgb(50, 35, 35);
+    color:rgb(25, 15, 15);
     padding-left: 300px;
     text-align: left;
 }
@@ -140,6 +141,7 @@ header h3{
     font-size:xx-large;
 }
 footer{
+    margin-top: 0px;
     background-color:  rgb(32, 28, 28);
 }
 footer h3{
@@ -148,4 +150,17 @@ footer h3{
     padding-top: 4px;
     padding-bottom: 6px;
     padding-right: 10px;
+}
+.order-btn{
+    width:200px;
+    border-radius: 20%;
+    height: 40px;
+    background-color:rgb(32, 28, 28) ;
+    text-decoration: none;
+    padding-top: 13px;
+    margin-left: 100px;
+    padding-bottom: 13px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color:  rgb(210, 207, 207);
 }
