@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Bliss Cafe</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    
+    } 
+.main{
+    background-image: url(backgroundimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#log{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    color: #3a0409;
+    padding: 10px;
+}
+#contact-form{
+        background-color: #3c051d;
+        margin: 2px;
+        padding: px;
+        height: 35vw;
+        width: 50%;
+        box-sizing: border-box;
+        border-top-left-radius: 700px;
+        border-bottom-right-radius: 700px;
+        align-content: center;
+        justify-content: center;
+        margin-left:27%;
+        margin-top: 50px;
+}
+#contact-form .inputt{
+    display: block;
+    justify-content: center;
+     align-content: center ;
+     margin-left: 30%;
+     background-color: rgb(245, 174, 207);
+    color: #000000;
+    margin-top: 10px;
+    height: 30px;
+    border: #b2afaf;
+    border-radius:5px;
+    align-items: center;
+    font-style: normal;
+    font-family:monospace;
+    width: 40%;
+
+
+
+}
+#contact-form button{
+    display: block;
+    justify-content: center;
+    align-content: center;
+    margin-left: 30%;
+    margin-top: 10px;
+      height: 30px;
+    border: #b2afaf;
+    border-radius: 5px;
+    align-items: center;
+    font-style: normal;
+    font-family:monospace;
+    width: 40%;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <body>
+    <div class="main">
+        <h1 id="log">Login</h1>
+
+        <form id="contact-form">
+            <input class="inputt" type="text" placeholder="Your Name" required>
+            <input class="inputt" type="email" placeholder="Your Email" required>
+            <button type="button" onclick="window.location.href='admin.html'">Admin</button>
+            <button type="button" onclick="window.location.href='Page1.html'">Customer</button>
+        </form>
+    </div>
+    <script src="scripthome.js"></script>
+</body>
+    </header>
+</body>
+</html>
