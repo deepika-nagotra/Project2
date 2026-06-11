@@ -18,7 +18,7 @@ header h3{
   
 }
 .hero-content{
-    background-color: rgb(21, 19, 19);
+    background-color: rgb(32, 28, 28);
     font-size:x-large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color:beige;
@@ -41,6 +41,111 @@ header h3{
       padding-left: 500px;
     cursor: pointer;
 }
+.side-drawer{
+    position: fixed;
+    top:0;
+    right: -350px;
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 15px rgba(0, 0,0,0.2);
+    z-index:1000;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+.side-drawer.open{
+    right:0;
+}
+.drawer-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+.close-btn{
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+.drawer-content{
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+}
+.check-btn{
+    width: 100%;
+    padding: 15px;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
 .menu-lines{
     padding-left: 50px;
+}
+.menu-lines-btn{
+    font-size: 28px;
+    cursor:pointer;
+    color:azure;
+    padding: 5px 10px;
+    transition: transform 0.2s;
+}
+.menu-lines-btn:hover{
+    transform: scale(1.1);
+    color: #663911;
+}
+.left-sidebar{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    transition: left 0.3s ease;
+    z-index: 2000;
+    padding-top: 60px;
+}
+.left-sidebar.open{
+    left:0;
+}
+.left-sidebar a{
+    display: block;
+    padding: 15px 25px;
+    color:white;
+    text-decoration:none;
+    font-size: 18px;
+}
+.left-sidebar a:hover{
+    background-color: #333;
+}
+.hero-image{
+ position: relative;
+}
+.hero-image img{
+    display: block;
+}
+.hero-text{
+    position: absolute;
+    top:200px;
+    color:rgb(50, 35, 35);
+    padding-left: 300px;
+    text-align: left;
+}
+.hero-text h1{
+    font-size:xx-large;
+}
+footer{
+    background-color:  rgb(32, 28, 28);
+}
+footer h3{
+    color:rgb(207, 207, 207);
+    text-align: right;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    padding-right: 10px;
 }
