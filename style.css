@@ -1,0 +1,29 @@
+*{
+    margin-top: 0px;
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+header{
+    background-color: rgb(213, 218, 218);
+    justify-content: center;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+  padding-top: 10px;  
+  padding-bottom: 1px;
+  
+}
+header h3{
+    font-family:Arial, Helvetica, sans-serif;
+  
+}
+.hero-content{
+    background-color: rgb(21, 19, 19);
+    font-size:x-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:beige;
+    padding-top: 15px;
+   
+    text-align: center;
+    padding-bottom: 5px;
+}
